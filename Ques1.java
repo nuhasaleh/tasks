@@ -1,44 +1,22 @@
-import java.util.Scanner;
-
 /**
- * Created by user on 07/02/21.
+ * Created by user on 16/02/21.
  */
 public class Ques1 {
-    int arr1[] ={2, 3,4} ;
-    int arr2 [] = new int [3] ;
-    public void reverse () {
-        int j = 0;
-        for (int i = arr1.length; i >0 ; i--,j++) {
-            arr2[j] = arr1[i-1] ;
-        }
-    }
-    public void print () {
-        System.out.println("before revers");
-        System.out.print("[");
-        for (int i = 0; i <arr1.length ; i++) {
-            if (i== arr1.length-1)
-                System.out.print(arr1[i]);
-            else
-                System.out.print(arr1[i]+",");
 
+    public void showRepeat (int arr[]){
+        System.out.println("repeated elements are : ");
+        for (int i = 0; i <arr.length ; i++) {
+            for (int j = i+1; j <arr.length ; j++) {
+                if (arr[i] == arr[j])
+                    System.out.print(arr[i] + " ");
+            }
         }
-        System.out.println("]");
-
-        System.out.println("after revers");
-        System.out.print("[");
-        for (int i = 0; i <arr2.length ; i++) {
-            if (i== arr2.length-1)
-                System.out.print(arr2[i]);
-            else
-                System.out.print(arr2[i]+",");
-
-        }
-        System.out.println("]");
     }
 
     public static void main(String[] args) {
-     Ques1 test = new Ques1();
-        test.reverse();
-        test.print();
+        Ques1 q = new Ques1();
+
+        int arr[]={1,1,2,3,4,5,5} ;
+        q.showRepeat(arr);
     }
 }
