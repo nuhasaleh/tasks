@@ -1,24 +1,31 @@
 import java.util.Arrays;
 
 /**
- * Created by user on 16/02/21.
+ * Created by user on 21/02/21.
  */
 public class Ques2 {
-    public void fiveRepeat (int b[]){
-        Arrays.sort(b);
+    public <E> void merge(E arr1[] , E arr2[]){
+        E mergeArr[] = (E[])new Object[arr1.length+arr2.length];
+        int pos = 0 ;
+        for (E elemrnt:arr1
+             ) {
+            mergeArr[pos++] = elemrnt;
 
-        for (int i = 0; i <b.length-2 ; i++) {
-            if (b[i] == b[i+1])
-                System.out.print(b[i] + " ");
         }
+
+        for (E element:arr2
+             ) {
+            mergeArr[pos++]=element;
+        }
+
+        System.out.println(Arrays.toString(mergeArr));
     }
 
     public static void main(String[] args) {
-        Ques2 q = new Ques2();
-        int b[]={1,1,2,2,3,3,4,4,5,5,6,7,8} ;
+        Integer arr1[]={1,2,3} ;
+        Integer arr2[]={4,5,6,7} ;
 
-        q.fiveRepeat(b);
+        Ques2 q = new Ques2();
+        q.merge(arr1,arr2);
     }
 }
-
-
